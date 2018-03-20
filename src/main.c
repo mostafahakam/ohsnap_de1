@@ -22,17 +22,17 @@ int main(int argc, char *argv[])
 
     builder = gtk_builder_new();
     gtk_builder_add_from_file (builder, "glade/test_glade.glade", NULL);
-    window = GTK_WIDGET(gtk_builder_get_object(builder, "main"));
-    image = GTK_WIDGET(gtk_builder_get_object(builder, "splash_image"));
-    notebook = GTK_WIDGET(gtk_builder_get_object(builder, "notebook_main"));
+    window = GTK_WINDOW(gtk_builder_get_object(builder, "main"));
+    image = GTK_IMAGE(gtk_builder_get_object(builder, "splash_image"));
+    notebook = GTK_NOTEBOOK(gtk_builder_get_object(builder, "notebook_main"));
     gtk_image_set_from_file(image, "img/photobooth.jpg");
 
     gtk_builder_connect_signals(builder, NULL);
 
 //    g_object_unref(builder);
 
-    gtk_widget_show(window);
-    gtk_widget_show(image);
+    gtk_widget_show(GTK_WIDGET(window));
+    gtk_widget_show(GTK_WIDGET(image));
     gtk_main();
 
     return 0;
@@ -66,11 +66,11 @@ void on_browse_click() {
 
 void on_button_submit_clicked() {
     GtkEntry *name;
-    GtkEntry *email;
-    GtkEntry *instagram;
-    GtkEntry *twitter;
+//    GtkEntry *email;
+//    GtkEntry *instagram;
+//    GtkEntry *twitter;
     gchar *name_text;
-    name = GTK_WIDGET(gtk_builder_get_object(builder, "name_field"));
+    name = GTK_ENTRY(gtk_builder_get_object(builder, "name_field"));
     name_text = gtk_entry_get_text(name);
 
     printf("Name: '%s'\n", name_text);
