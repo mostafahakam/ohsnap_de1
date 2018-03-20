@@ -13,7 +13,6 @@ WARN=-Wall
 PTHREAD=-pthread
 
 CCFLAGS=$(DEBUG) $(OPT) $(WARN) $(PTHREAD) -pipe
-
 GTKLIB=`pkg-config --cflags --libs gtk+-3.0`
 
 # linker

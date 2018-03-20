@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 GtkBuilder	*builder;
 GtkWindow	*window;
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
 
     gtk_builder_connect_signals(builder, NULL);
 
-    g_object_unref(builder);
+//    g_object_unref(builder); //DON'T DISABLE
 
     gtk_widget_show(GTK_WIDGET(window));
     gtk_widget_show(GTK_WIDGET(image));
@@ -58,12 +59,33 @@ void on_browse_click() {
 
 void on_button_submit_clicked() {
     GtkEntry *name;
-//    GtkEntry *email;
-//    GtkEntry *instagram;
-//    GtkEntry *twitter;
-    gchar *name_text;
+    const gchar *name_text;
     name = GTK_ENTRY(gtk_builder_get_object(builder, "name_field"));
     name_text = gtk_entry_get_text(name);
-
     printf("Name: '%s'\n", name_text);
+
+    GtkEntry *email;
+    const gchar *email_text;
+    email = GTK_ENTRY(gtk_builder_get_object(builder, "email_field"));
+    email_text = gtk_entry_get_text(email);
+    printf("email: '%s'\n", email_text);
+
+    GtkEntry *instagram;
+    const gchar *instagram_text;
+    instagram = GTK_ENTRY(gtk_builder_get_object(builder, "instagram_field"));
+    instagram_text = gtk_entry_get_text(instagram);
+    printf("instagram: '%s'\n", instagram_text);
+
+    GtkEntry *twitter;
+    const gchar *twitter_text;
+    twitter = GTK_ENTRY(gtk_builder_get_object(builder, "twitter_field"));
+    twitter_text = gtk_entry_get_text(twitter);
+    printf("twitter: '%s'\n", twitter_text);
+    
+    GtkStatusbar *reg_status;
+    reg_status = GTK_STATUSBAR(gtk_builder_get_object(builder, "register_status"));
+    
+
+// Put code for sending to server here
+    gtk_statusbar_push(reg_status, 0, "Successfully Registered!");
 }
