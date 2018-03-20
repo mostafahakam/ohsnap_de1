@@ -10,18 +10,10 @@ GtkImage	*image;
 
 int main(int argc, char *argv[])
 {
-    if( access( "img/mario.jpg", F_OK ) != -1 ) {
-    	// file exists
-	printf("Success\n");
-    } else {
-    	// file doesn't exist
-	printf("Fail\n");
-	return 0;
-    }
     gtk_init(&argc, &argv);
 
     builder = gtk_builder_new();
-    gtk_builder_add_from_file (builder, "glade/test_glade.glade", NULL);
+    gtk_builder_add_from_file(builder, "glade/test_glade.glade", NULL);
     window = GTK_WINDOW(gtk_builder_get_object(builder, "main"));
     image = GTK_IMAGE(gtk_builder_get_object(builder, "splash_image"));
     notebook = GTK_NOTEBOOK(gtk_builder_get_object(builder, "notebook_main"));
@@ -29,7 +21,7 @@ int main(int argc, char *argv[])
 
     gtk_builder_connect_signals(builder, NULL);
 
-//    g_object_unref(builder);
+    g_object_unref(builder);
 
     gtk_widget_show(GTK_WIDGET(window));
     gtk_widget_show(GTK_WIDGET(image));
