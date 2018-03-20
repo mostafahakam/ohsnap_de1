@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 GtkBuilder	*builder;
 GtkWindow	*window;
@@ -9,6 +10,14 @@ GtkImage	*image;
 
 int main(int argc, char *argv[])
 {
+    if( access( "img/mario.jpg", F_OK ) != -1 ) {
+    	// file exists
+	printf("Success\n");
+    } else {
+    	// file doesn't exist
+	printf("Fail\n");
+	return 0;
+    }
     gtk_init(&argc, &argv);
 
     builder = gtk_builder_new();
