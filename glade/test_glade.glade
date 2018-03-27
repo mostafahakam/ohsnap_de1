@@ -161,7 +161,7 @@
             <property name="halign">center</property>
             <property name="valign">start</property>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="register_top_logo">
                 <property name="name">splash_tiny</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -191,7 +191,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="register_email">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">email</property>
@@ -203,7 +203,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="register_insta">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Instagram 
@@ -216,7 +216,7 @@ Username</property>
               </packing>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="register_twitter">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Twitter Handle</property>
@@ -273,7 +273,7 @@ Username</property>
               </packing>
             </child>
             <child>
-              <object class="GtkFixed">
+              <object class="GtkFixed" id="spacer1">
                 <property name="width_request">32</property>
                 <property name="height_request">32</property>
                 <property name="visible">True</property>
@@ -335,7 +335,7 @@ Username</property>
               </packing>
             </child>
             <child>
-              <object class="GtkFixed">
+              <object class="GtkFixed" id="spacer2">
                 <property name="height_request">20</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -347,7 +347,7 @@ Username</property>
               </packing>
             </child>
             <child>
-              <object class="GtkFixed">
+              <object class="GtkFixed" id="spacer3">
                 <property name="height_request">50</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -391,7 +391,7 @@ Username</property>
             <property name="halign">center</property>
             <property name="valign">start</property>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="take_photo_logo">
                 <property name="name">splash_tiny</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
