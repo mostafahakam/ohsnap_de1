@@ -42,6 +42,7 @@ void on_main_window_destroy() {
 
 void on_take_clicked() {
     printf("take image\n");
+    gtk_notebook_set_current_page(notebook, 1);
 }
 
 void on_register_clicked() {
