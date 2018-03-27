@@ -3,15 +3,18 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdbool.h>
 
 GtkBuilder	*builder;
 GtkWindow	*window;
 GtkNotebook 	*notebook;
 GtkImage	*image;
+bool fullscreen;
 
 int main(int argc, char *argv[])
 {
     gtk_init(&argc, &argv);
+    fullscreen = false;
 
     builder = gtk_builder_new();
     gtk_builder_add_from_file(builder, "glade/test_glade.glade", NULL);
@@ -57,6 +60,19 @@ void on_browse_click() {
 
 }
 
+void on_fullscreen_clicked() {
+    printf("fullscreen\n");
+    if(!fullscreen) {
+    	gtk_window_fullscreen(window);
+	fullscreen = true;
+	return;
+    } else {
+	gtk_window_unfullscreen(window);
+	fullscreen = false;
+	return;
+    }
+}
+
 void on_button_submit_clicked() {
     GtkEntry *name;
     const gchar *name_text;
@@ -81,10 +97,10 @@ void on_button_submit_clicked() {
     twitter = GTK_ENTRY(gtk_builder_get_object(builder, "twitter_field"));
     twitter_text = gtk_entry_get_text(twitter);
     printf("twitter: '%s'\n", twitter_text);
-    
+
     GtkStatusbar *reg_status;
     reg_status = GTK_STATUSBAR(gtk_builder_get_object(builder, "register_status"));
-    
+
 
 // Put code for sending to server here
     gtk_statusbar_push(reg_status, 0, "Successfully Registered!");
