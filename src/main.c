@@ -42,7 +42,7 @@ void on_main_window_destroy() {
 
 void on_take_clicked() {
     printf("take image\n");
-    gtk_notebook_set_current_page(notebook, 1);
+    gtk_notebook_set_current_page(notebook, 2);
 }
 
 void on_register_clicked() {
@@ -55,6 +55,10 @@ void on_back_register_clicked() {
     gtk_notebook_set_current_page(notebook, 0);
 }
 
+void on_back_take_photo_clicked() {
+    printf("take photo back\n");
+    gtk_notebook_set_current_page(notebook, 0);
+}
 
 void on_browse_click() {
     printf("browse\n");
