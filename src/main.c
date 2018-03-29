@@ -11,12 +11,13 @@ GtkNotebook 	*notebook;
 GtkImage	*image;
 GtkImage	*image_login;
 bool fullscreen;
+char username[256];
 
 int main(int argc, char *argv[])
 {
     gtk_init(&argc, &argv);
     fullscreen = false;
-    loggedin = false;
+
     builder = gtk_builder_new();
     gtk_builder_add_from_file(builder, "glade/test_glade.glade", NULL);
     window = GTK_WINDOW(gtk_builder_get_object(builder, "main"));
@@ -41,20 +42,66 @@ void on_main_window_destroy() {
     gtk_main_quit();
 }
 
+void on_take_login_photo_clicked(){
+    GdkPixbuf 	*pixBuf;
+    GdkPixbuf	*pixScaled;
 
-void on_take_clicked() {
+
+    printf("snap!!");
+
+    system("python scripts/login_snap.py");
+
+    gtk_image_set_from_file(image_login, "img/login.jpg");
+    pixBuf = gtk_image_get_pixbuf(image_login);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    gtk_image_set_from_pixbuf(image_login, pixScaled);
+}
+
+void on_submit_login_photo_clicked(){
+    printf("submit!!");
+    system("python scripts/login_verify.py");
+    FILE * fp = fopen("/home/pi/Desktop/ohsnap/test.txt","r");
+    if(fgets(username,sizeof(username),fp)){
+    }
+    fclose(fp);
+    if(strcmp(username,"unrecognized")){
+      gtk_notebook_set_current_page(notebook, 2);
+    }
+    else if(strcmp(username,"f")){}
+    else{
+      gtk_notebook_set_current_page(notebook, 2);
+    }
+    printf("%s",username);
+}
+
+void on_back_login_clicked(){
+    gtk_notebook_set_current_page(notebook, 0);
+}
+
+
+void on_snap_clicked() {
     GtkImage	*image_taken;
     GdkPixbuf 	*pixBuf;
     GdkPixbuf	*pixScaled;
+    char charbuf[256];
+
     image_taken = GTK_IMAGE(gtk_builder_get_object(builder, "taken_photo_display"));
     printf("take image\n");
     gtk_notebook_set_current_page(notebook, 3);
-    system("python scripts/register.py TRY");
+
+    sprintf(charbuf,"python scripts/snap.py %s","saywaht");
+    system(charbuf);
+
     gtk_image_set_from_file(image_taken, "img/TRY.jpg");
     pixBuf = gtk_image_get_pixbuf(image_taken);
     pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(image_taken, pixScaled);
     gtk_widget_show(GTK_WIDGET(image_taken));
+}
+
+void on_browse_clicked(){
+    
+
 }
 
 void on_login_clicked() {
@@ -123,34 +170,4 @@ void on_button_submit_clicked() {
 
 // Put code for sending to server here
     gtk_statusbar_push(reg_status, 0, "Successfully Registered!");
-}
-void on_take_login_photo_clicked(){
-    GdkPixbuf 	*pixBuf;
-    GdkPixbuf	*pixScaled;
-    printf("snap!!");
-    system("python scripts/login_snap.py");
-    gtk_image_set_from_file(image_login, "img/login.jpg");
-    pixBuf = gtk_image_get_pixbuf(image_login);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
-    gtk_image_set_from_pixbuf(image_login, pixScaled);
-}
-void on_submit_login_photo_clicked(){
-    char output[256];
-    printf("submit!!");
-    system("python scripts/login_verify.py");
-    FILE * fp = fopen("/home/pi/Desktop/ohsnap/test.txt","r");
-    if(fgets(output,sizeof(output),fp)){
-    }
-    fclose(fp);
-    if(strcmp(output,"unrecognized")){}
-    else if(strcmp(output,"f")){}
-    else{
-      gtk_notebook_set_current_page(notebook, 0);
-    }
-    printf("%s",output);
-    free(output);
-}
-void on_back_login_clicked(){
-    printf("back!!");
-    gtk_notebook_set_current_page(notebook, 0);
 }
