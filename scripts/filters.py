@@ -13,7 +13,7 @@ class Filters():
         Cimg = enhancer.enhance(1.2)
         enhancer = ImageEnhance.Sharpness(Cimg)
         Cimg = enhancer.enhance(1.5)
-        Cimg.save('1.jpg')
+        Cimg.save('/home/pi/Desktop/ohsnap/img/snap1.jpg')
 
     def BW(self):
         #B&W, contrast up
@@ -23,7 +23,7 @@ class Filters():
         Gimg = enhancer.enhance(1.3)
         enhancer = ImageEnhance.Contrast(Gimg)
         Gimg = enhancer.enhance(1.4)
-        Gimg.save('2.jpg')
+        Gimg.save('/home/pi/Desktop/ohsnap/img/snap2.jpg')
 
     def custom1(self):
         #Custom
@@ -37,7 +37,7 @@ class Filters():
         Pimg = enhancer.enhance(1.3)
         enhancer = ImageEnhance.Contrast(Pimg)
         Pimg = enhancer.enhance(1.2)
-        Pimg.save('3.jpg')
+        Pimg.save('/home/pi/Desktop/ohsnap/img/snap3.jpg')
         
     def custom2(self): 
         #Custom
@@ -51,7 +51,7 @@ class Filters():
         Pimg = enhancer.enhance(1.1)
         enhancer = ImageEnhance.Contrast(Pimg)
         Pimg = enhancer.enhance(1.2)
-        Pimg.save('4.jpg')
+        Pimg.save('/home/pi/Desktop/ohsnap/img/snap4.jpg')
     def satura(self):
     #Enhance, saturation up
         img = self.img
@@ -61,4 +61,4 @@ class Filters():
         Cimg = enhancer.enhance(1.2)
         enhancer = ImageEnhance.Sharpness(Cimg)
         Cimg = enhancer.enhance(1.5)
-        Cimg.save('5.jpg')
+        Cimg.save('/home/pi/Desktop/ohsnap/img/snap5.jpg')

@@ -1,7 +1,6 @@
 import json
 import time
 import os
-import datetime
 
 class Payload(object):
     def __init__(self,j):
@@ -11,6 +10,7 @@ class Payload(object):
 class Capture():
     def __init__(self,c):
         self.camera = c
+        self.count = 0
     def snap(self,username):
         newpath = '/home/pi/Desktop/ohsnap/img/'+username
         if not os.path.exists(newpath):
@@ -19,10 +19,7 @@ class Capture():
         self.camera.start_preview()
         time.sleep(5)
         self.camera.stop_preview()
-        date = datetime.datetime.now().strftime('%b-%d-%I%M%p-%G')
-        self.camera.capture('/home/pi/Desktop/ohsnap/img/'+username+'/'+'%s.jpg'%date)
-        output = open("/home/pi/Desktop/ohsnap/img/"+username+"/pnames.txt","a")
-        output.write(date + '\n')
+        self.camera.capture('/home/pi/Desktop/ohsnap/img/'+username+'/%s.jpg'%self.count)
     def registration(self,user_name):
         self.camera.start_preview()
         time.sleep(5)
@@ -33,4 +30,4 @@ class Capture():
         self.camera.start_preview()
         time.sleep(5)
         self.camera.stop_preview()
-        self.camera.capture('/home/pi/Desktop/ohsnap/img/login.jpg')
+        self.camera.capture('/home/pi/Desktop/ohsnap/img/snap.jpg',quality=20)
