@@ -100,7 +100,7 @@ void on_snap_photo_clicked(){
 
     gtk_image_set_from_file(snap_image, "img/snap.jpg");
     pixBuf = gtk_image_get_pixbuf(snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 507, 380, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(snap_image, pixScaled);
     gtk_notebook_set_current_page(notebook, 1);
 
@@ -154,7 +154,7 @@ void on_do_you_like_no_clicked(){
 
     gtk_image_set_from_file(snap_image, "img/snap.jpg");
     pixBuf = gtk_image_get_pixbuf(snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 507, 380, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(snap_image, pixScaled);
     gtk_notebook_set_current_page(notebook, 1); 
     if(!logged){
