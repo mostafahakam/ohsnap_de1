@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.14"/>
   <object class="GtkDialog" id="are_u_done">
@@ -84,7 +84,7 @@
   <object class="GtkApplicationWindow" id="main">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
-    <property name="default_width">800</property>
+    <property name="default_width">1024</property>
     <property name="default_height">600</property>
     <signal name="destroy" handler="on_main_window_destroy" swapped="no"/>
     <child>
@@ -234,17 +234,18 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="halign">center</property>
-            <property name="valign">center</property>
+            <property name="valign">start</property>
             <child>
               <object class="GtkLabel" id="take_photo_logo">
                 <property name="name">splash_tiny</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="valign">start</property>
-                <property name="margin_top">20</property>
+                <property name="margin_top">10</property>
+                <property name="margin_bottom">50</property>
                 <property name="label" translatable="yes">Oh Snap!</property>
                 <attributes>
-                  <attribute name="font-desc" value="Amazing Kids 14"/>
+                  <attribute name="font-desc" value="Amazing Kids 20"/>
                 </attributes>
               </object>
               <packing>
@@ -423,17 +424,18 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="halign">center</property>
-            <property name="valign">center</property>
+            <property name="valign">start</property>
             <child>
               <object class="GtkLabel" id="take_photo_logo1">
                 <property name="name">splash_tiny</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="valign">start</property>
-                <property name="margin_top">20</property>
+                <property name="margin_top">10</property>
+                <property name="margin_bottom">50</property>
                 <property name="label" translatable="yes">Oh Snap!</property>
                 <attributes>
-                  <attribute name="font-desc" value="Amazing Kids 14"/>
+                  <attribute name="font-desc" value="Amazing Kids 20"/>
                 </attributes>
               </object>
               <packing>
@@ -444,8 +446,8 @@
             </child>
             <child>
               <object class="GtkFixed" id="spacer9">
-                <property name="width_request">32</property>
-                <property name="height_request">400</property>
+                <property name="width_request">100</property>
+                <property name="height_request">250</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="resize_mode">immediate</property>
@@ -458,8 +460,8 @@
             </child>
             <child>
               <object class="GtkFixed" id="spacer10">
-                <property name="width_request">32</property>
-                <property name="height_request">32</property>
+                <property name="width_request">100</property>
+                <property name="height_request">250</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
               </object>
@@ -495,13 +497,15 @@
                 <property name="valign">center</property>
                 <child>
                   <object class="GtkFixed" id="spacer13">
-                    <property name="width_request">32</property>
+                    <property name="width_request">150</property>
+                    <property name="height_request">50</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                   </object>
                   <packing>
-                    <property name="left_attach">2</property>
+                    <property name="left_attach">1</property>
                     <property name="top_attach">2</property>
+                    <property name="width">2</property>
                   </packing>
                 </child>
                 <child>
@@ -517,16 +521,6 @@
                     <property name="left_attach">0</property>
                     <property name="top_attach">0</property>
                     <property name="width">4</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed1">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="top_attach">2</property>
                   </packing>
                 </child>
                 <child>
@@ -578,7 +572,7 @@
                 </child>
                 <child>
                   <object class="GtkFixed" id="fixed2">
-                    <property name="height_request">20</property>
+                    <property name="width_request">100</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                   </object>
@@ -589,6 +583,7 @@
                 </child>
                 <child>
                   <object class="GtkFixed" id="fixed3">
+                    <property name="width_request">100</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                   </object>
@@ -647,10 +642,11 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="valign">start</property>
-                <property name="margin_top">20</property>
+                <property name="margin_top">10</property>
+                <property name="margin_bottom">50</property>
                 <property name="label" translatable="yes">Oh Snap!</property>
                 <attributes>
-                  <attribute name="font-desc" value="Amazing Kids 14"/>
+                  <attribute name="font-desc" value="Amazing Kids 20"/>
                 </attributes>
               </object>
               <packing>
