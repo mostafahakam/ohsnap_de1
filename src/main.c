@@ -71,17 +71,25 @@ void on_main_window_destroy() {
     gtk_main_quit();
 }
 
+void on_login_clicked(){
+    gtk_notebook_set_current_page(notebook, 5);
+}
+
+void on_button_submit_login_clicked(){
+}
+
+
 void on_snap_photo_clicked(){
     GdkPixbuf 	*pixBuf;
     GdkPixbuf	*pixScaled;
 
     printf("snap!!");
-
+    system("python scripts/state1.py");
     system("python scripts/login_snap.py");
 
     gtk_image_set_from_file(snap_image, "img/snap.jpg");
     pixBuf = gtk_image_get_pixbuf(snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(snap_image, pixScaled);
     gtk_notebook_set_current_page(notebook, 1);
 
@@ -121,7 +129,7 @@ void on_do_you_like_yes_clicked(){
     GdkPixbuf	*pixScaled;
     gtk_image_set_from_file(filtered_snap_image, "img/snap.jpg");
     pixBuf = gtk_image_get_pixbuf(filtered_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filtered_snap_image, pixScaled);
     gtk_notebook_set_current_page(notebook, 2);
 }
@@ -134,7 +142,7 @@ void on_do_you_like_no_clicked(){
 
     gtk_image_set_from_file(snap_image, "img/snap.jpg");
     pixBuf = gtk_image_get_pixbuf(snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(snap_image, pixScaled);
     gtk_notebook_set_current_page(notebook, 1); 
     if(!logged){
@@ -197,7 +205,7 @@ void on_do_filter_clicked(){
 
     gtk_image_set_from_file(filter_dynamic_snap_image, filter_file_name);
     pixBuf = gtk_image_get_pixbuf(filter_dynamic_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filter_dynamic_snap_image, pixScaled);
 
     gtk_image_set_from_file(d0, "img/d0.jpg");
@@ -230,6 +238,7 @@ void on_do_filter_clicked(){
     pixScaled = gdk_pixbuf_scale_simple(pixBuf, 100, 75, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(d5, pixScaled);
     filtered = true;
+    system("python scripts/state2.py");
     gtk_notebook_set_current_page(notebook, 3);
 }
 
@@ -239,7 +248,7 @@ void on_filter0_clicked(){
 
     gtk_image_set_from_file(filter_dynamic_snap_image, "img/snap.jpg");
     pixBuf = gtk_image_get_pixbuf(filter_dynamic_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filter_dynamic_snap_image, pixScaled);
     strcpy(filter_file_name,"img/snap.jpg");
 }
@@ -251,7 +260,7 @@ void on_filter1_clicked(){
 
     gtk_image_set_from_file(filter_dynamic_snap_image, "img/snap1.jpg");
     pixBuf = gtk_image_get_pixbuf(filter_dynamic_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filter_dynamic_snap_image, pixScaled);
     strcpy(filter_file_name,"img/snap1.jpg");
 }
@@ -263,7 +272,7 @@ void on_filter2_clicked(){
 
     gtk_image_set_from_file(filter_dynamic_snap_image, "img/snap2.jpg");
     pixBuf = gtk_image_get_pixbuf(filter_dynamic_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filter_dynamic_snap_image, pixScaled);
     strcpy(filter_file_name,"img/snap2.jpg");
 }
@@ -275,7 +284,7 @@ void on_filter3_clicked(){
 
     gtk_image_set_from_file(filter_dynamic_snap_image, "img/snap3.jpg");
     pixBuf = gtk_image_get_pixbuf(filter_dynamic_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filter_dynamic_snap_image, pixScaled);
     strcpy(filter_file_name,"img/snap3.jpg");
 }
@@ -287,7 +296,7 @@ void on_filter4_clicked(){
 
     gtk_image_set_from_file(filter_dynamic_snap_image, "img/snap4.jpg");
     pixBuf = gtk_image_get_pixbuf(filter_dynamic_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filter_dynamic_snap_image, pixScaled);
     strcpy(filter_file_name,"img/snap4.jpg");
 }
@@ -299,7 +308,7 @@ void on_filter5_clicked(){
 
     gtk_image_set_from_file(filter_dynamic_snap_image, "img/snap5.jpg");
     pixBuf = gtk_image_get_pixbuf(filter_dynamic_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filter_dynamic_snap_image, pixScaled);
     strcpy(filter_file_name,"img/snap5.jpg");
 }
@@ -310,7 +319,7 @@ void on_done_clicked(){
 
     gtk_image_set_from_file(filtered_snap_image, filter_file_name);
     pixBuf = gtk_image_get_pixbuf(filtered_snap_image);
-    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 640, 480, GDK_INTERP_BILINEAR);
+    pixScaled = gdk_pixbuf_scale_simple(pixBuf, 480, 320, GDK_INTERP_BILINEAR);
     gtk_image_set_from_pixbuf(filtered_snap_image, pixScaled);
 
     char command[256] = "python scripts/upload.py ";

@@ -97,7 +97,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="halign">center</property>
-            <property name="valign">center</property>
+            <property name="valign">start</property>
             <child>
               <object class="GtkButton" id="login">
                 <property name="label" translatable="yes">Sign in</property>
@@ -236,8 +236,8 @@
                 <property name="name">splash_tiny</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="valign">center</property>
-                <property name="margin_top">20</property>
+                <property name="valign">start</property>
+                <property name="margin_top">10</property>
                 <property name="label" translatable="yes">Oh Snap!</property>
                 <attributes>
                   <attribute name="font-desc" value="Amazing Kids 14"/>
@@ -268,7 +268,7 @@
             <child>
               <object class="GtkFixed" id="spacer5">
                 <property name="width_request">100</property>
-                <property name="height_request">400</property>
+                <property name="height_request">250</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
               </object>
@@ -281,7 +281,7 @@
             <child>
               <object class="GtkFixed" id="spacer4">
                 <property name="width_request">100</property>
-                <property name="height_request">450</property>
+                <property name="height_request">250</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
               </object>
@@ -293,8 +293,8 @@
             </child>
             <child>
               <object class="GtkImage" id="taken_photo_display">
-                <property name="width_request">640</property>
-                <property name="height_request">480</property>
+                <property name="width_request">480</property>
+                <property name="height_request">320</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">center</property>
@@ -425,7 +425,7 @@
                 <property name="name">splash_tiny</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="valign">center</property>
+                <property name="valign">start</property>
                 <property name="margin_top">20</property>
                 <property name="label" translatable="yes">Oh Snap!</property>
                 <attributes>
@@ -467,8 +467,8 @@
             </child>
             <child>
               <object class="GtkImage" id="taken_photo_display1">
-                <property name="width_request">640</property>
-                <property name="height_request">480</property>
+                <property name="width_request">480</property>
+                <property name="height_request">320</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">center</property>
@@ -642,7 +642,7 @@
                 <property name="name">splash_tiny</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="valign">center</property>
+                <property name="valign">start</property>
                 <property name="margin_top">20</property>
                 <property name="label" translatable="yes">Oh Snap!</property>
                 <attributes>
@@ -699,8 +699,8 @@
             </child>
             <child>
               <object class="GtkImage" id="taken_photo_display2">
-                <property name="width_request">640</property>
-                <property name="height_request">480</property>
+                <property name="width_request">480</property>
+                <property name="height_request">320</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">center</property>
@@ -1067,6 +1067,185 @@ Username</property>
           </object>
           <packing>
             <property name="position">4</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkGrid" id="login_page">
+            <property name="width_request">-1</property>
+            <property name="height_request">-1</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <child>
+              <object class="GtkLabel" id="login_top_logo1">
+                <property name="name">splash_tiny</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">center</property>
+                <property name="margin_top">20</property>
+                <property name="label" translatable="yes">Oh Snap!</property>
+                <attributes>
+                  <attribute name="font-desc" value="Amazing Kids 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="login_username">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_right">10</property>
+                <property name="label" translatable="yes">username</property>
+                <property name="justify">right</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="login_password">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_right">10</property>
+                <property name="label" translatable="yes">password</property>
+                <property name="justify">right</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="username_field">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="input_purpose">name</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="password_field">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="input_purpose">password</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+                <property name="width">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="spacer11">
+                <property name="width_request">32</property>
+                <property name="height_request">32</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+                <property name="width">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_submit_login">
+                <property name="label" translatable="yes">Submit</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_button_submit_login_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="back_login">
+                <property name="label" translatable="yes">Back</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_back_login_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">8</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkStatusbar" id="login_status">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="margin_left">10</property>
+                <property name="margin_right">10</property>
+                <property name="margin_start">10</property>
+                <property name="margin_end">10</property>
+                <property name="margin_top">6</property>
+                <property name="margin_bottom">6</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">2</property>
+                <signal name="text-pushed" handler="on_login_status_text_pushed" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">6</property>
+                <property name="width">3</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="spacer12">
+                <property name="height_request">32</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">4</property>
+                <property name="width">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="spacer16">
+                <property name="height_request">32</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">5</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="position">5</property>
+            <property name="tab_fill">False</property>
           </packing>
         </child>
         <child type="tab">

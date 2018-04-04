@@ -30,4 +30,4 @@ class Capture():
         self.camera.start_preview()
         time.sleep(5)
         self.camera.stop_preview()
-        self.camera.capture('/home/pi/Desktop/ohsnap/img/snap.jpg',quality=20)
+        self.camera.capture('/home/pi/Desktop/ohsnap/img/snap.jpg',quality=50)
