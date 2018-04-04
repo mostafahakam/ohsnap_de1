@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     notebook = GTK_NOTEBOOK(gtk_builder_get_object(builder, "notebook_main"));
     gtk_image_set_from_file(image, "img/photobooth.jpg");
 
-
+    system("python scripts/state0.py");
     gtk_builder_connect_signals(builder, NULL);
 
 //    g_object_unref(builder); //DON'T DISABLE
@@ -76,6 +76,17 @@ void on_login_clicked(){
 }
 
 void on_button_submit_login_clicked(){
+    GtkEntry *username;
+    const gchar *username_text;
+    username = GTK_ENTRY(gtk_builder_get_object(builder, "username_field"));
+    username_text = gtk_entry_get_text(username);
+    printf("username: '%s'\n", username_text);
+
+    GtkEntry *password;
+    const gchar *password_text;
+    password = GTK_ENTRY(gtk_builder_get_object(builder, "password_field"));
+    password_text = gtk_entry_get_text(password);
+    printf("password: '%s'\n", password_text);
 }
 
 
@@ -121,6 +132,7 @@ void on_snap_photo_clicked(){
 
 void on_back_take_photo_clicked(){
     gtk_notebook_set_current_page(notebook, 0);
+    system("python scripts/state0.py");
     logged = false;
 }
 
@@ -137,7 +149,7 @@ void on_do_you_like_yes_clicked(){
 void on_do_you_like_no_clicked(){
     GdkPixbuf 	*pixBuf;
     GdkPixbuf	*pixScaled;
-
+    system("python scripts/state1.py");
     system("python scripts/login_snap.py");
 
     gtk_image_set_from_file(snap_image, "img/snap.jpg");
@@ -173,6 +185,7 @@ void on_do_you_like_no_clicked(){
 }
 
 void on_back_login_clicked(){
+    system("python scripts/state0.py");
     gtk_notebook_set_current_page(notebook, 0);
 }
 
@@ -183,6 +196,7 @@ void on_back_take_photo1_clicked(){
     logged = false;
     filtered = false;
     strcpy(filter_file_name,"img/snap.jpg");
+    system("python scripts/state0.py");
     gtk_notebook_set_current_page(notebook, 0);
 }
 
@@ -326,6 +340,7 @@ void on_done_clicked(){
     strcat(command,filter_file_name);
     system(command);
     gtk_statusbar_push(upload_status, 0, "");
+    system("python scripts/state0.py");
     gtk_notebook_set_current_page(notebook, 2);
 }
 

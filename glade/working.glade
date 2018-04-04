@@ -99,20 +99,6 @@
             <property name="halign">center</property>
             <property name="valign">start</property>
             <child>
-              <object class="GtkButton" id="login">
-                <property name="label" translatable="yes">Sign in</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_login_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">3</property>
-                <property name="height">2</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkLabel" id="logo">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -158,20 +144,6 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="signup">
-                <property name="label" translatable="yes">Sign up</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_signup_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">3</property>
-                <property name="top_attach">3</property>
-                <property name="height">2</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkFixed" id="main_button_height">
                 <property name="height_request">50</property>
                 <property name="visible">True</property>
@@ -192,7 +164,7 @@
                 <signal name="clicked" handler="on_snap_photo_clicked" swapped="no"/>
               </object>
               <packing>
-                <property name="left_attach">1</property>
+                <property name="left_attach">2</property>
                 <property name="top_attach">3</property>
                 <property name="height">2</property>
               </packing>
@@ -211,7 +183,39 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkFixed" id="fixed4">
+                <property name="width_request">75</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">3</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="fixed5">
+                <property name="width_request">185</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed" id="fixed6">
+                <property name="width_request">110</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">3</property>
+              </packing>
             </child>
           </object>
         </child>

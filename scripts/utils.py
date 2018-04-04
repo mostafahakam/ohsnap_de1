@@ -28,6 +28,6 @@ class Capture():
 
     def login(self):
         self.camera.start_preview()
-        time.sleep(5)
+        time.sleep(7)
         self.camera.stop_preview()
         self.camera.capture('/home/pi/Desktop/ohsnap/img/snap.jpg',quality=50)
